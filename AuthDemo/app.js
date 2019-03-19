@@ -43,6 +43,10 @@ app.get("/register", function(req, res){
     res.render("register");
 });
 
+app.post("/register", function(req, res){
+   res.send("Register post route"); 
+});
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server has started.");
