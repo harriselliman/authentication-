@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 app.use(require("express-session")({
     secret: "He's our centre half.",
     resave: false,
-    saveUnitialized: false
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
