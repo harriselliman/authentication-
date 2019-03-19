@@ -59,6 +59,12 @@ app.post("/register", function(req, res){
     });
 });
 
+// LOGIN ROUTES
+
+app.get("/login", function(req, res){
+    res.render("login");
+})
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server has started.");
