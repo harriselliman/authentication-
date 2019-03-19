@@ -72,6 +72,10 @@ app.post("/login", passport.authenticate("local", {
 }), function(req, res){
 });
 
+app.get("/logout", function(req, res){
+    res.send("okay i will log you out")
+})
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server has started.");
