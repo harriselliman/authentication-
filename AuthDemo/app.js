@@ -46,11 +46,17 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res){
-   req.body.username
-   req.body.password
-   User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-       
-   });
+    req.body.username
+    req.body.password
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            res.render("register");
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/secret"); 
+        });
+    });
 });
 
 
