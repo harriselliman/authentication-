@@ -13,6 +13,8 @@ mongoose.connect("mongodb://localhost:27017/auth_demo_app", { useNewUrlParser: t
 var app = express();
 app.set("view engine", "ejs");
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.use(require("express-session")({
     secret: "He's our centre half.",
     resave: false,
@@ -44,7 +46,7 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res){
-   res.send("Register post route"); 
+   
 });
 
 
