@@ -63,7 +63,14 @@ app.post("/register", function(req, res){
 
 app.get("/login", function(req, res){
     res.render("login");
-})
+});
+
+app.post("/login", passport.authenticate("local", {
+    sucessRedirect: "/secret",
+    failureRedirect: "/login"
+}), function(req, res){
+    
+});
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
