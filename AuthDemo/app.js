@@ -73,7 +73,7 @@ app.post("/login", passport.authenticate("local", {
 });
 
 app.get("/logout", function(req, res){
-    res.send("okay i will log you out")
+    req.logout();
 })
 
 
